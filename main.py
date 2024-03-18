@@ -6,9 +6,9 @@ app=Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/welcome',methods=['POST','GET'])
-def welcome():
-    return 'hell'
+# @app.route('/welcome',methods=['POST','GET'])
+# def welcome():
+#     return 'hell'
     
 
 
