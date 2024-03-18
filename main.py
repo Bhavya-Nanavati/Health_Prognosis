@@ -8,7 +8,7 @@ def index():
 
 @app.route('/welcome',methods=['POST','GET'])
 def welcome():
-    return 'hello'
+    return 'hell'
     
 
 
