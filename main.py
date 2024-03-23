@@ -4,7 +4,7 @@ app=Flask(__name__)
 
 @app.route('/',methods=['POST','GET'])
 def index():
-    return render_template(r'C:\Users\BHAVYA\Desktop\Health_Prognosis\index.html')
+    return render_template('index.html')
 
 # @app.route('/welcome',methods=['POST','GET'])
 # def welcome():
