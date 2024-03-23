@@ -4,97 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seven Textboxes Form</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    width: 80%;
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .form-group {
-    margin-bottom: 20px;
-  }
-
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-  }
-
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-  }
-
-  input[type="text"]:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-
-  input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-
-  input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-</style>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 <div class="container">
-  <h2 style="color: #007bff;">Seven Textboxes Form</h2>
-  <form method="post" action="/">
-    <div class="form-group">
-      <label for="textbox1">Textbox 1</label>
-      <input type="text" id="textbox1" name="textbox1" required>
+  <h2>Seven Textboxes Form</h2>
+  <form method="post" action="/result">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="textbox1">Textbox 1</label>
+        <input type="text" id="textbox1" name="textbox1" required>
+      </div>
+      <div class="form-group">
+        <label for="textbox2">Textbox 2</label>
+        <input type="text" id="textbox2" name="textbox2" required>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="textbox2">Textbox 2</label>
-      <input type="text" id="textbox2" name="textbox2" required>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="textbox3">Textbox 3</label>
+        <input type="text" id="textbox3" name="textbox3" required>
+      </div>
+      <div class="form-group">
+        <label for="textbox4">Textbox 4</label>
+        <input type="text" id="textbox4" name="textbox4" required>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="textbox3">Textbox 3</label>
-      <input type="text" id="textbox3" name="textbox3" required>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="textbox5">Textbox 5</label>
+        <input type="text" id="textbox5" name="textbox5" required>
+      </div>
+      <div class="form-group">
+        <label for="textbox6">Textbox 6</label>
+        <input type="text" id="textbox6" name="textbox6" required>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="textbox4">Textbox 4</label>
-      <input type="text" id="textbox4" name="textbox4" required>
-    </div>
-    <div class="form-group">
-      <label for="textbox5">Textbox 5</label>
-      <input type="text" id="textbox5" name="textbox5" required>
-    </div>
-    <div class="form-group">
-      <label for="textbox6">Textbox 6</label>
-      <input type="text" id="textbox6" name="textbox6" required>
-    </div>
-    <div class="form-group">
-      <label for="textbox7">Textbox 7</label>
-      <input type="text" id="textbox7" name="textbox7" required>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="textbox7">Textbox 7</label>
+        <input type="text" id="textbox7" name="textbox7" required>
+      </div>
     </div>
     <input type="submit" value="Submit">
   </form>
