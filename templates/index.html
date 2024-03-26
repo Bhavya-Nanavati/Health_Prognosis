@@ -3,50 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seven Textboxes Form</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<title>Heart Disease Prediction Form</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #007bff;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  width: calc(33.33% - 10px);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+</style>
 </head>
 <body>
 
 <div class="container">
-  <h2>Seven Textboxes Form</h2>
+  <h2>Heart Disease Prediction Form</h2>
   <form method="post" action="/result">
     <div class="form-row">
       <div class="form-group">
-        <label for="textbox1">Textbox 1</label>
-        <input type="text" id="textbox1" name="textbox1" required>
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" required>
       </div>
       <div class="form-group">
-        <label for="textbox2">Textbox 2</label>
-        <input type="text" id="textbox2" name="textbox2" required>
+        <label for="sex">Sex</label>
+        <input type="text" id="sex" name="sex" required>
+      </div>
+      <div class="form-group">
+        <label for="constrictive_pericarditis">Constrictive Pericarditis</label>
+        <input type="text" id="constrictive_pericarditis" name="constrictive_pericarditis" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="textbox3">Textbox 3</label>
-        <input type="text" id="textbox3" name="textbox3" required>
+        <label for="resting_blood_pressure">Resting Blood Pressure</label>
+        <input type="text" id="resting_blood_pressure" name="resting_blood_pressure" required>
       </div>
       <div class="form-group">
-        <label for="textbox4">Textbox 4</label>
-        <input type="text" id="textbox4" name="textbox4" required>
+        <label for="fasting_blood_sugar">Fasting Blood Sugar</label>
+        <input type="text" id="fasting_blood_sugar" name="fasting_blood_sugar" required>
+      </div>
+      <div class="form-group">
+        <label for="resting_electrocardiographic">Resting Electrocardiographic</label>
+        <input type="text" id="resting_electrocardiographic" name="resting_electrocardiographic" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="textbox5">Textbox 5</label>
-        <input type="text" id="textbox5" name="textbox5" required>
+        <label for="exercise_induced_angina">Exercise Induced Angina</label>
+        <input type="text" id="exercise_induced_angina" name="exercise_induced_angina" required>
       </div>
       <div class="form-group">
-        <label for="textbox6">Textbox 6</label>
-        <input type="text" id="textbox6" name="textbox6" required>
+        <label for="oldpeak">Oldpeak</label>
+        <input type="text" id="oldpeak" name="oldpeak" required>
+      </div>
+      <div class="form-group">
+        <label for="slope">Slope</label>
+        <input type="text" id="slope" name="slope" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="textbox7">Textbox 7</label>
-        <input type="text" id="textbox7" name="textbox7" required>
+        <label for="calcium">Calcium</label>
+        <input type="text" id="calcium" name="calcium" required>
+      </div>
+      <div class="form-group">
+        <label for="thalassemia">Thalassemia</label>
+        <input type="text" id="thalassemia" name="thalassemia" required>
+      </div>
+      <div class="form-group">
+        <label for="target">Target</label>
+        <input type="text" id="target" name="target" required>
       </div>
     </div>
+   
     <input type="submit" value="Submit">
   </form>
 </div>
