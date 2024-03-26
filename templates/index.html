@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heart Disease Prediction Form</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
 }
@@ -17,35 +18,31 @@ body {
   max-width: 600px;
   margin: 50px auto;
   background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
   color: #007bff;
-}
-
-.form-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .form-group {
-  width: calc(33.33% - 10px);
+  margin-bottom: 20px;
+  position: relative;
 }
 
 label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   color: #333;
 }
 
 input[type="text"] {
-  width: 100%;
-  padding: 10px;
+  width: calc(100% - 30px);
+  padding: 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -57,11 +54,49 @@ input[type="text"]:focus {
   outline: none;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip .tooltiptext::after {
+  content: '';
+  position: absolute;
+  bottom: 100%; /* Position the caret above the tooltip text */
+  left: 50%; /* Position the caret horizontally centered */
+  border-style: solid;
+  border-width: 8px 8px 0 8px; /* Set the size and shape of the caret */
+  border-color: #555 transparent transparent transparent; /* Set the color */
+  transform: translateX(-50%) rotate(180deg); /* Adjust for centering */
+
+}
+
 input[type="submit"] {
   background-color: #007bff;
   color: #fff;
   border: none;
-  padding: 12px 20px;
+  padding: 15px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
@@ -71,69 +106,70 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #0056b3;
 }
+
 </style>
 </head>
 <body>
 
 <div class="container">
   <h2>Heart Disease Prediction Form</h2>
-  <form method="post" action="/result">
+  <form method="post" action="/predict">
     <div class="form-row">
       <div class="form-group">
-        <label for="age">Age</label>
+        <label for="age">Age<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Enter your age in years</span></span></label>
         <input type="text" id="age" name="age" required>
       </div>
       <div class="form-group">
-        <label for="sex">Sex</label>
+        <label for="sex">Sex<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Enter your gender. Use '0' for female and '1' for male</span></span></label>
         <input type="text" id="sex" name="sex" required>
       </div>
       <div class="form-group">
-        <label for="constrictive_pericarditis">Constrictive Pericarditis</label>
+        <label for="constrictive_pericarditis">Constrictive Pericarditis<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">A condition in which inflamed pericardium causes heart constriction</span></span></label>
         <input type="text" id="constrictive_pericarditis" name="constrictive_pericarditis" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="resting_blood_pressure">Resting Blood Pressure</label>
+        <label for="resting_blood_pressure">Resting Blood Pressure<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">resting blood pressure in mmHg (millimeters of mercury)</span></span></label>
         <input type="text" id="resting_blood_pressure" name="resting_blood_pressure" required>
       </div>
       <div class="form-group">
-        <label for="fasting_blood_sugar">Fasting Blood Sugar</label>
+        <label for="cholesterol">Cholesterol<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">resting blood pressure in mmHg (millimeters of mercury)</span></span></label>
+        <input type="text" id="cholesterol" name="cholesterol" required>
+      </div>
+      <div class="form-group">
+        <label for="fasting_blood_sugar">Fasting Blood Sugar<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Level of blood sugar after fasting for at least 8 hours</span></span></label>
         <input type="text" id="fasting_blood_sugar" name="fasting_blood_sugar" required>
       </div>
       <div class="form-group">
-        <label for="resting_electrocardiographic">Resting Electrocardiographic</label>
+        <label for="resting_electrocardiographic">Resting Electrocardiographic<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Electrocardiogram (ECG) results obtained while the patient is at rest</span></span></label>
         <input type="text" id="resting_electrocardiographic" name="resting_electrocardiographic" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="exercise_induced_angina">Exercise Induced Angina</label>
+        <label for="exercise_induced_angina">Exercise Induced Angina<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Presence of chest pain or discomfort during physical exertion,0 for no , 1 for yes</span></span></label>
         <input type="text" id="exercise_induced_angina" name="exercise_induced_angina" required>
       </div>
       <div class="form-group">
-        <label for="oldpeak">Oldpeak</label>
+        <label for="oldpeak">Oldpeak<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">ST depression induced by exercise</span></span></label>
         <input type="text" id="oldpeak" name="oldpeak" required>
       </div>
       <div class="form-group">
-        <label for="slope">Slope</label>
+        <label for="slope">Slope<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">The slope of the peak exercise ST segment</span></span></label>
         <input type="text" id="slope" name="slope" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="calcium">Calcium</label>
+        <label for="calcium">Calcium<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Serum calcium level</span></span></label>
         <input type="text" id="calcium" name="calcium" required>
       </div>
       <div class="form-group">
-        <label for="thalassemia">Thalassemia</label>
+        <label for="thalassemia">Thalassemia<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">A group of inherited blood disorders characterized by abnormal hemoglobin production</span></span></label>
         <input type="text" id="thalassemia" name="thalassemia" required>
       </div>
-      <div class="form-group">
-        <label for="target">Target</label>
-        <input type="text" id="target" name="target" required>
       </div>
-    </div>
    
     <input type="submit" value="Submit">
   </form>
