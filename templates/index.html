@@ -31,7 +31,10 @@ h2 {
 .form-group {
   margin-bottom: 20px;
   position: relative;
-}
+
+ }
+
+
 
 label {
   display: block;
@@ -111,69 +114,116 @@ input[type="submit"]:hover {
 </head>
 <body>
 
-<div class="container">
-  <h2>Heart Attack Prediction Form</h2>
-  <form method="post" action="/predict">
-    <div class="form-row">
+  <div class="container">
+    <h2>Heart Attack Prediction Form</h2>
+    <form method="post" action="/predict">
       <div class="form-group">
         <label for="age">Age<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Enter your age in years</span></span></label>
         <input type="text" id="age" name="age" required>
       </div>
+      <hr>
       <div class="form-group">
-        <label for="sex">Sex<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Enter your gender. Use '0' for female and '1' for male</span></span></label>
-        <input type="text" id="sex" name="sex" required>
+        <label>Sex<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Select your gender</span></span></label>
+        <div>
+          <label for="male"><input type="radio" id="male" name="sex" value="1"> Male</label>
+          <label for="female"><input type="radio" id="female" name="sex" value="0"> Female</label>
+        </div>
       </div>
+      <hr>
       <div class="form-group">
-        <label for="constrictive_pericarditis">Constrictive Pericarditis<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">A condition in which inflamed pericardium causes heart constriction</span></span></label>
-        <input type="text" id="constrictive_pericarditis" name="constrictive_pericarditis" required>
+        <label>Chest Pain<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Type of chest pain experienced</span></span></label>
+        <div class="radio-buttons">
+          <label for="asymptomatic"><input type="radio" id="asymptomatic" name="chestpain" value="0"> Asymptomatic</label>
+          <label for="atypical_angina"><input type="radio" id="atypical_angina" name="chestpain" value="1"> Atypical Angina</label>
+          <label for="non_anginal_pain"><input type="radio" id="non_anginal_pain" name="chestpain" value="2"> Non-anginal Pain</label>
+          <label for="typical_angina"><input type="radio" id="typical_angina" name="chestpain" value="3"> Typical Angina</label>
+        </div>
       </div>
-    </div>
-    <div class="form-row">
+      <hr>
       <div class="form-group">
         <label for="resting_blood_pressure">Resting Blood Pressure<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">resting blood pressure in mmHg (millimeters of mercury)</span></span></label>
         <input type="text" id="resting_blood_pressure" name="resting_blood_pressure" required>
       </div>
+      <hr>
       <div class="form-group">
-        <label for="cholesterol">Cholesterol<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">resting blood pressure in mmHg (millimeters of mercury)</span></span></label>
+        <label for="cholesterol">Cholesterol<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">cholestrol in mg/dl fetched via BMI sensor</span></span></label>
         <input type="text" id="cholesterol" name="cholesterol" required>
       </div>
+      <hr>
       <div class="form-group">
-        <label for="fasting_blood_sugar">Fasting Blood Sugar<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Level of blood sugar after fasting for at least 8 hours</span></span></label>
-        <input type="text" id="fasting_blood_sugar" name="fasting_blood_sugar" required>
+        <label>Fasting Blood Sugar<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Level of blood sugar after fasting for at least 8 hours</span></span></label>
+        <div>
+          <label for="fbs_yes"><input type="radio" id="fbs_yes" name="fasting_blood_sugar" value="1"> Yes</label>
+          <label for="fbs_no"><input type="radio" id="fbs_no" name="fasting_blood_sugar" value="0"> No</label>
+        </div>
       </div>
+      <hr>
       <div class="form-group">
-        <label for="resting_electrocardiographic">Resting Electrocardiographic<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Electrocardiogram (ECG) results obtained while the patient is at rest</span></span></label>
-        <input type="text" id="resting_electrocardiographic" name="resting_electrocardiographic" required>
+        <label>Resting Electrocardiographic<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Electrocardiogram (ECG) results obtained while the patient is at rest</span></span></label>
+        <div class="radio-buttons">
+          <label for="ecg_normal"><input type="radio" id="ecg_normal" name="resting_electrocardiographic" value="1"> Normal</label>
+          <label for="ecg_abnormal"><input type="radio" id="ecg_abnormal" name="resting_electrocardiographic" value="2"> Abnormal (ST-T wave abnormality or left ventricular hypertrophy)</label>
+        </div>
       </div>
-    </div>
-    <div class="form-row">
+      <hr>
       <div class="form-group">
-        <label for="exercise_induced_angina">Exercise Induced Angina<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Presence of chest pain or discomfort during physical exertion,0 for no , 1 for yes</span></span></label>
-        <input type="text" id="exercise_induced_angina" name="exercise_induced_angina" required>
+        <label for="exercise_induced_angina">Exercise Induced Angina<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Presence of chest pain or discomfort during physical exertion</span></span></label>
+        <div>
+          <label for="exercise_induced_angina_yes">
+          <input type="radio" id="exercise_induced_angina_yes" name="exercise_induced_angina" value="1" required>Yes</label>
+          <label for="exercise_induced_angina_no">
+          <input type="radio" id="exercise_induced_angina_no" name="exercise_induced_angina" value="0" required>No</label>
+        </div>
       </div>
+      <hr>
       <div class="form-group">
         <label for="oldpeak">Oldpeak<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">ST depression induced by exercise</span></span></label>
         <input type="text" id="oldpeak" name="oldpeak" required>
       </div>
+      <hr>
       <div class="form-group">
         <label for="slope">Slope<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">The slope of the peak exercise ST segment</span></span></label>
-        <input type="text" id="slope" name="slope" required>
+        <div>
+          <label for="slope_upsloping">
+          <input type="radio" id="slope_upsloping" name="slope" value="0" required>Upsloping</label>
+          <label for="slope_flat">
+          <input type="radio" id="slope_flat" name="slope" value="1" required>Flat</label>
+          <label for="slope_downsloping">
+          <input type="radio" id="slope_downsloping" name="slope" value="2" required>Downsloping</label>
+        </div>
       </div>
-    </div>
-    <div class="form-row">
+      <hr>
       <div class="form-group">
-        <label for="calcium">Calcium<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Serum calcium level</span></span></label>
-        <input type="text" id="calcium" name="calcium" required>
+        <label for="num_major_vessels">Number of Major Vessels<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Number of major vessels colored by fluoroscopy (0-3)</span></span></label>
+        <div>
+          <label for="num_major_vessels_0">
+          <input type="radio" id="num_major_vessels_0" name="num_major_vessels" value="0" required>0</label>
+          <label for="num_major_vessels_1">
+          <input type="radio" id="num_major_vessels_1" name="num_major_vessels" value="1" required>1</label>
+          <label for="num_major_vessels_2">
+          <input type="radio" id="num_major_vessels_2" name="num_major_vessels" value="2" required>2</label>
+          <label for="num_major_vessels_3">
+          <input type="radio" id="num_major_vessels_3" name="num_major_vessels" value="3" required>3</label>
+          <label for="num_major_vessels_4">
+          <input type="radio" id="num_major_vessels_4" name="num_major_vessels" value="4" required>4</label>
+        </div>
       </div>
+      <hr>
       <div class="form-group">
         <label for="thalassemia">Thalassemia<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">A group of inherited blood disorders characterized by abnormal hemoglobin production</span></span></label>
-        <input type="text" id="thalassemia" name="thalassemia" required>
+        <div>
+          <label for="thalassemia_fixed">
+          <input type="radio" id="thalassemia_fixed" name="thalassemia" value="1" required>Fixed Defect</label>
+          <label for="thalassemia_normal">
+          <input type="radio" id="thalassemia_normal" name="thalassemia" value="2" required>Normal Blood Flow</label>
+          <label for="thalassemia_reversible">
+          <input type="radio" id="thalassemia_reversible" name="thalassemia" value="3" required>Reversible Defect</label>
+        </div>
       </div>
-      </div>
-   
-    <input type="submit" value="Submit">
-  </form>
-</div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 
 </body>
+
 </html>
