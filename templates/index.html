@@ -22,7 +22,7 @@ body {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  back
+  
 }
 
 h2 {
@@ -88,12 +88,12 @@ input[type="text"]:focus {
 .tooltip .tooltiptext::after {
   content: '';
   position: absolute;
-  bottom: 100%; /* Position the caret above the tooltip text */
-  left: 50%; /* Position the caret horizontally centered */
+  bottom: 100%; 
+  left: 50%; 
   border-style: solid;
-  border-width: 8px 8px 0 8px; /* Set the size and shape of the caret */
-  border-color: #555 transparent transparent transparent; /* Set the color */
-  transform: translateX(-50%) rotate(180deg); /* Adjust for centering */
+  border-width: 8px 8px 0 8px; 
+  border-color: #555 transparent transparent transparent;
+  transform: translateX(-50%) rotate(180deg);
 
 }
 
@@ -153,7 +153,7 @@ input[type="submit"]:hover {
       </div>
       <hr>
       <div class="form-group">
-        <label>Fasting Blood Sugar<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Level of blood sugar after fasting for at least 8 hours</span></span></label>
+        <label>Fasting Blood Sugar &gt;120 mg/dl<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Level of blood sugar after fasting for at least 8 hours</span></span></label>
         <div>
           <label for="fbs_yes"><input type="radio" id="fbs_yes" name="fasting_blood_sugar" value="1"> Yes</label>
           <label for="fbs_no"><input type="radio" id="fbs_no" name="fasting_blood_sugar" value="0"> No</label>
@@ -168,6 +168,11 @@ input[type="submit"]:hover {
         </div>
       </div>
       <hr>
+      <div class="form-group">
+        <label for="max_heart_rate">Maximum Heart Rate<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Maximum heart rate achieved</span></span></label>
+        <input type="text" id="max_heart_rate" name="max_heart_rate" required>
+      </div>
+      <hr>      
       <div class="form-group">
         <label for="exercise_induced_angina">Exercise Induced Angina<span class="tooltip"><i class="fas fa-question-circle"></i><span class="tooltiptext">Presence of chest pain or discomfort during physical exertion</span></span></label>
         <div>
