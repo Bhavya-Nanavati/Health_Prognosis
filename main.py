@@ -18,16 +18,13 @@ def predict():
    chol =float( request.form["cholesterol"])  
    fbs = float(request.form["fasting_blood_sugar"])
    restecg = float(request.form["resting_electrocardiographic"])    
-
    thalach = float(request.form["max_heart_rate"])
-
    exang = float(request.form["exercise_induced_angina"] ) 
    oldpeak = float(request.form["oldpeak"]) 
    slope = float(request.form["slope"])   
    ca = float(request.form["num_major_vessels"])    
    thal = float(request.form["thalassemia"])  
-     
-     
+   
    arr = np.array([[age, sex, cp, trestbps,  
             chol, fbs, restecg, thalach,  
             exang, oldpeak, slope, ca,  
