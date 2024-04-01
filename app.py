@@ -24,12 +24,10 @@ def predict():
   ca = float(request.form["num_major_vessels"])    
   thal = float(request.form["thalassemia"])  
    
-  arr = np.array([[age, sex, cp, trestbps,  
+  pred = model.predict(np.array([[age, sex, cp, trestbps,  
             chol, fbs, restecg, thalach,  
             exang, oldpeak, slope, ca,  
-            thal]])  
-  pred = model.predict(arr)  
-  print(pred)
+            thal]]))  
   if pred == 0:  
     return render_template('no.html')  
   else:  
