@@ -35,5 +35,6 @@ def predict():
      return render_template('no.html')  
    else:  
      return render_template('yes.html') 
+   
 if  __name__=='__app__':
-    app.run(debug=True)
+  app.run(debug=True)
