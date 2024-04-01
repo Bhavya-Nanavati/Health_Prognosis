@@ -7,12 +7,10 @@ model = joblib.load('Heart_Attack_Prediction.pkl')
 app=Flask(__name__)
 
 @app.route('/')
-@cross_origin()
 def index():
   return render_template('index.html')
 
 @app.route("/predict", methods=["POST"])  
-@cross_origin()
 def predict():  
   age = float(request.form["age"])  
   sex = float(request.form["sex"] ) 
