@@ -2,14 +2,17 @@ from flask import Flask,render_template,request
 import joblib  
 import pandas as pd  
 import numpy as np 
+from flask_cors import cross_origin
 model = joblib.load('Heart_Attack_Prediction.pkl')
 app=Flask(__name__)
 
 @app.route('/')
+@cross_origin()
 def index():
     return render_template('index.html')
 
 @app.route("/predict", methods=["POST"])  
+@cross_origin()
 def predict():  
    age = float(request.form["age"])  
    sex = float(request.form["sex"] ) 
@@ -36,5 +39,5 @@ def predict():
    else:  
      return render_template('yes.html') 
    
-if  __name__=='__app__':
+if  __name__=='__main__':
   app.run(debug=True)
