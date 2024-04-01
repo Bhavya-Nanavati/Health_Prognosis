@@ -1,8 +1,6 @@
 from flask import Flask,render_template,request
 import joblib  
-import pandas as pd  
 import numpy as np 
-from flask_cors import cross_origin
 model = joblib.load('Heart_Attack_Prediction.pkl')
 app=Flask(__name__)
 
