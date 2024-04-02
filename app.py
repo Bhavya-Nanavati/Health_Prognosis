@@ -1,7 +1,11 @@
 from flask import Flask,render_template,request
+import pickle
 import joblib  
 import numpy as np 
-model = joblib.load('Heart_Attack_Prediction.pkl')
+with open("Heart_Attack_Prediction.pkl", "rb") as f:
+  model = pickle.load(f)
+  f.close()
+
 app=Flask(__name__)
 
 @app.route('/')
