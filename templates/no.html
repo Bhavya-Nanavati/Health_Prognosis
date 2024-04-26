@@ -3,9 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo_bg.png">
     <title>Document</title>
+    <style>
+        header {
+            background-color: white;
+            color: black;
+
+            text-align: center;
+            margin-top: -16px;
+            margin-right:-16px;
+            
+        }
+        #heading{
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .nav-list {
+            justify-content: flex-end;
+            background-color: #333;
+            display: flex;
+            padding: 1rem 0;
+            border-radius: var(--radius);
+            align-items: center;
+            background-color: white;
+            box-shadow: 0px 0px 2px rgb(0, 0, 0);
+        }
+        .nav-item{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            list-style-type:none;
+            margin-right: 4rem;
+        }
+        .nav-item a{
+             text-decoration: none;
+            color:black;
+            font-weight: bold;
+
+        }
+        .nav-item:first-child{
+         margin-right:auto;
+        }
+  
+        .nav-item a:hover {
+            color: #72c6e2;
+            }
+        .nav-item:active li{
+            background-color: gray;
+
+         }
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/736x/20/e9/16/20e9161545733d0568855b940961994a.jpg');
+           
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #b1f9a9;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            color: #007bff;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .para{
+          text-align: left;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: auto;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;            
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0px 0px 2px rgb(0, 0, 0);
+        }
+    </style>
+
 </head>
 <body>
-    <h2>Congratulations you have a low risk of experiencing a heart attack</h2>
+    <header>
+        <nav>
+            <ul class="nav-list" >
+              <li class="nav-item"><img src="logo_name.png" width="290px" height="55px"></li>
+              <li class="nav-item"> <a href="index.html">Home</a></li> 
+              <li class="nav-item">  <a href="form.html">Heart Attack Prediction</a></li> 
+              
+            </ul> 
+           </nav>
+    </header>
+    <div class="container">
+        <h2>Congratulations!</h2>
+        <p class="para">You have been assessed to have a low probability of experiencing a heart attack based on the analysis of your health data.</p>
+        <p class="para">Keep up the good work with maintaining a healthy lifestyle and regular check-ups with your healthcare provider.</p>
+        <p class="para">If you have any questions or concerns about your heart health, don't hesitate to consult with a medical professional.</p>
+        
+        <a href="index.html" class="button">Back to Home</a>
+        <a href="form.html" class="button">Back to Heart Attack Prediction Form</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Health Prognosis. All rights reserved.</p>
+    </footer>
 </body>
 </html>
